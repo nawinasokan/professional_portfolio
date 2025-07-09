@@ -138,13 +138,6 @@ code {
   animation: gradient-x 6s ease infinite;
 }
 
-.animate-typewriter {
-  animation: typewriter 2s steps(20, end) 1s 1 normal both;
-}
-
-.animate-blink {
-  animation: blink 1s infinite;
-}
 
 .animate-fade-in-up {
   animation: fade-in-up 1s ease-out 0.5s both;

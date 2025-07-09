@@ -12,8 +12,8 @@ const Hero = ({ data }) => {
   const downloadResume = () => {
     // Mock download functionality
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // This would be actual PDF in production
-    link.download = 'Nawin_A_Resume.pdf';
+    link.href = `${process.env.PUBLIC_URL}/pdf/Nawin__Resume.pdf`;
+    link.download = 'Nawin__Resume.pdf';
     link.click();
   };
 
@@ -29,16 +29,11 @@ const Hero = ({ data }) => {
         <div className="text-center max-w-4xl mx-auto">
           {/* Avatar with animated border */}
           <div className="mb-8 relative inline-block">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 animate-spin-slow p-1">
               <div className="rounded-full bg-gray-900 p-1">
                 <Avatar className="w-32 h-32 mx-auto border-4 border-gray-700 shadow-2xl">
                   <AvatarImage src={data.avatar} alt={data.name} />
-                  <AvatarFallback className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-white">
-                    {data.name.split(' ').map(n => n[0]).join('')}
-                  </AvatarFallback>
                 </Avatar>
               </div>
-            </div>
           </div>
 
           {/* Name with gradient text */}
@@ -51,7 +46,6 @@ const Hero = ({ data }) => {
             <span className="inline-block animate-typewriter">
               {data.title}
             </span>
-            <span className="animate-blink">|</span>
           </h2>
 
           {/* Tagline with fade-in animation */}

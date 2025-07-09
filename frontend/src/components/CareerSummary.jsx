@@ -21,15 +21,9 @@ const CareerSummary = ({ summary }) => {
           <Card className="bg-gray-900/50 border-gray-700 shadow-2xl backdrop-blur-sm hover:shadow-3xl transition-all duration-500 group">
             <CardContent className="p-8">
               <div className="relative">
-                {/* Quote icon */}
-                <div className="absolute -top-2 -left-2 text-blue-400/20 text-6xl font-serif">"</div>
-                
                 <p className="text-gray-300 text-lg leading-relaxed relative z-10 group-hover:text-white transition-colors duration-300">
                   {summary}
                 </p>
-
-                {/* Closing quote */}
-                <div className="absolute -bottom-6 -right-2 text-blue-400/20 text-6xl font-serif rotate-180">"</div>
               </div>
 
               {/* Animated highlight bars */}

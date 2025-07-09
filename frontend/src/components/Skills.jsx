@@ -16,6 +16,7 @@ const Skills = ({ skills }) => {
       'Framework': 'from-green-500 to-blue-500',
       'Database': 'from-purple-500 to-pink-500',
       'Backend': 'from-orange-500 to-red-500',
+      'AI': 'from-orange-400 to-red-300',
       'Tools': 'from-cyan-500 to-teal-500',
       'DevOps': 'from-indigo-500 to-purple-500',
       'Cloud': 'from-yellow-500 to-orange-500',
@@ -26,7 +27,6 @@ const Skills = ({ skills }) => {
 
   return (
     <section className="py-20 bg-gray-900 relative overflow-hidden">
-      {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-pink-500/10 transform skew-y-1"></div>
       </div>

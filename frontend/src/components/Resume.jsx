@@ -7,14 +7,14 @@ const Resume = ({ personalData }) => {
   const downloadResume = () => {
     // Mock download functionality
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // This would be actual PDF in production
+    link.href = `${process.env.PUBLIC_URL}/pdf/Nawin__Resume.pdf`;
     link.download = `${personalData.name.replace(' ', '_')}_Resume.pdf`;
     link.click();
   };
 
   const viewResume = () => {
     // Mock view functionality
-    window.open('/resume.pdf', '_blank');
+    window.open(`${process.env.PUBLIC_URL}/pdf/Nawin__Resume.pdf`, '_blank');
   };
 
   return (

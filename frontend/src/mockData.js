@@ -3,10 +3,10 @@ export const portfolioData = {
     name: "Nawin A",
     title: "Software Developer",
     tagline: "Python Developer with 1 year of experience seeking new opportunities",
-    email: "nawin.a@example.com",
-    phone: "+91 9876543210",
-    linkedin: "https://linkedin.com/in/nawin-a",
-    github: "https://github.com/nawin-a",
+    email: "nawinasokan16@gmail.com",
+    phone: "+91 8300796919",
+    linkedin: "https://linkedin.com/in/nawin-a-dev",
+    github: "https://github.com/nawinasokan",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
   },
   
@@ -15,11 +15,11 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
-      title: "Python Developer",
-      company: "TechStart Solutions",
-      duration: "Jan 2024 - Present",
-      location: "Bangalore, India",
-      description: "Developing web applications using Django and Flask frameworks. Built REST APIs for mobile applications and implemented database optimization strategies.",
+      title: "Trainee - Software Development",
+      company: "Mahima Technology pvt ltd",
+      duration: "AUG 2024 - FEB 2025",
+      location: "Salem, India",
+      description: "Developing web applications using Django frameworks. Built REST APIs for mobile applications and implemented database optimization strategies.",
       achievements: [
         "Developed 5+ web applications using Django framework",
         "Improved API response time by 40% through optimization",
@@ -28,15 +28,15 @@ export const portfolioData = {
     },
     {
       id: 2,
-      title: "Python Intern",
-      company: "DataFlow Systems",
-      duration: "Jun 2023 - Dec 2023",
-      location: "Chennai, India",
-      description: "Worked on data processing pipelines and automated reporting systems. Gained experience in pandas, NumPy, and data visualization libraries.",
+      title: "Software Developer",
+      company: "Mahima Technology pvt ltd",
+      duration: "FEB 2025 - Present",
+      location: "Salem, India",
+      description: "Worked on AI projects involving model development, training, and deployment using Python and ML libraries.",
       achievements: [
-        "Built automated data processing scripts reducing manual work by 60%",
-        "Created interactive dashboards using Plotly and Streamlit",
-        "Participated in code reviews and followed best practices"
+        "Built ML models for real-world use cases",
+        "Deployed AI apps with Streamlit and TensorFlow",
+        "Improved model accuracy by 15%"
       ]
     }
   ],
@@ -44,45 +44,48 @@ export const portfolioData = {
   qualifications: [
     {
       id: 1,
-      degree: "Bachelor of Technology in Computer Science",
+      degree: "Bachelor of Engineering in Electroics and Communication",
       institution: "Anna University",
       duration: "2020 - 2024",
-      grade: "CGPA: 8.2/10",
+      grade: "CGPA: 8.4/10",
       description: "Specialized in software engineering, data structures, and algorithms"
     },
     {
       id: 2,
       degree: "Python Programming Certification",
-      institution: "Coursera - University of Michigan",
-      duration: "2023",
+      institution: "Livewire India",
+      duration: "2024",
       grade: "Grade: A",
       description: "Comprehensive Python programming course covering advanced concepts"
     },
     {
       id: 3,
-      degree: "Django Web Framework Certification",
-      institution: "Udemy",
-      duration: "2023",
-      grade: "Grade: 95%",
-      description: "Advanced Django development including REST APIs and deployment"
+      degree: "Cloud Computing Certification",
+      institution: "Livewire India",
+      duration: "2024",
+      grade: "Grade: A",
+    description: "Comprehensive cloud infrastructure, virtualization, AWS services and cloud security practices."
     }
   ],
   
   skills: [
     { name: "Python", level: 90, category: "Programming" },
-    { name: "Django", level: 85, category: "Framework" },
-    { name: "Flask", level: 75, category: "Framework" },
     { name: "JavaScript", level: 70, category: "Programming" },
-    { name: "React", level: 65, category: "Framework" },
-    { name: "PostgreSQL", level: 80, category: "Database" },
-    { name: "MongoDB", level: 75, category: "Database" },
-    { name: "REST APIs", level: 85, category: "Backend" },
-    { name: "Git", level: 80, category: "Tools" },
+    { name: "Java", level: 70, category: "Programming" },
+    { name: "Django", level: 95, category: "Framework" },
+    { name: "Flask", level: 75, category: "Framework" },
+    { name: "FastAPI", level: 75, category: "Framework" },
+    { name: "PostgreSQL", level: 85, category: "Database" },
+    { name: "SQLite", level: 75, category: "Database" },
+    { name: "Git", level: 85, category: "Tools" },
     { name: "Docker", level: 60, category: "DevOps" },
-    { name: "AWS", level: 55, category: "Cloud" },
+    { name: "AWS", level: 65, category: "Cloud" },
+    { name: "Machine Learning", level: 80, category: "AI" },
+    { name: "Deep Learning", level: 70, category: "AI" },
+    { name: "Scikit-learn", level: 75, category: "AI" },
     { name: "Problem Solving", level: 88, category: "Soft Skills" },
     { name: "Team Collaboration", level: 85, category: "Soft Skills" },
-    { name: "Communication", level: 82, category: "Soft Skills" }
+    { name: "Communication", level: 95, category: "Soft Skills" }
   ],
   
   projects: [
