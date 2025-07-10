@@ -94,8 +94,8 @@ export const portfolioData = {
       title: "Task Management and Time Tracking Web Application",
       description: " Productivity web app with role-based dashboards: admins manage tasks and users, users log activities.Real-time status, task duration tracking.",
       techStack: ["Python", "Django", "SQLite", "JavaScript", "jQuery"],
-      githubUrl: "https://github.com/nawin-a/task-management-api",
-      liveUrl: "https://task-api-demo.herokuapp.com",
+      githubUrl: "https://github.com/nawinasokan/budgetplan",
+      liveUrl: "https://budgetplan-dev.vercel.app/",
       image: "pdf/blackalaram.png"
     },
     {
@@ -103,8 +103,8 @@ export const portfolioData = {
       title: "Invoice Data Extraction System Using Gemini AI",
       description: " Built a system that leverages Gemini AI to extract invoice data from PDF and image files with high accuracy using OCR and machine learning.",
       techStack: ["Python", "Gemini API", "Django", "JavaScript", "PostgreSQL"],
-      githubUrl: "https://github.com/nawin-a/data-dashboard",
-      liveUrl: "https://data-dashboard-app.streamlit.app",
+      githubUrl: "https://github.com/nawinasokan/budgetplan",
+      liveUrl: "https://budgetplan-dev.vercel.app/",
       image: "pdf/blackinvoice.jpg"
     },
     {
@@ -112,18 +112,18 @@ export const portfolioData = {
       title: "Bulk File uploadation",
       description: " Productivity web app with role-based dashboards: admins manage tasks and users, users log activities.Real-time status, task duration tracking.",
       techStack: ["Python", "SQLite", "Django", "jQuery", "JavaScript","Docker"],
-      githubUrl: "https://github.com/nawin-a/weather-api",
-      liveUrl: "https://weather-forecast-api.herokuapp.com",
+      githubUrl: "https://github.com/nawinasokan/F1",
+      liveUrl: "https://github.com/nawinasokan/F1",
       image: "pdf/blackfile.png"
     },
-    // {
-    //   id: 4,
-    //   title: "Add project here",
-    //   description: "Full-stack e-commerce application with Django backend, React frontend, payment integration, and inventory management.",
-    //   techStack: ["Django", "React", "PostgreSQL", "Stripe", "Bootstrap"],
-    //   githubUrl: "https://github.com/nawin-a/ecommerce-app",
-    //   liveUrl: "https://ecommerce-demo.netlify.app",
-    //   image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop"
-    // }
+    {
+      id: 4,
+      title: "Budget Planner Application",
+      description: "Smart finance tracker with income/expense logging, category-wise analysis, and savings goals. Visual dashboards give real-time insights for better money management.",
+      techStack: ["React", "JavaScript", "Bootstrap"],
+      githubUrl: "https://github.com/nawinasokan/budgetplan",
+      liveUrl: "https://budgetplan-dev.vercel.app/",
+      image: "pdf/bp.jpeg"
+    }
   ]
 };
