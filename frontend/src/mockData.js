@@ -91,39 +91,39 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "Task Management API",
-      description: "RESTful API built with Django REST Framework for task management with user authentication, CRUD operations, and real-time notifications.",
-      techStack: ["Django", "PostgreSQL", "Redis", "Celery", "JWT"],
+      title: "Task Management and Time Tracking Web Application",
+      description: " Productivity web app with role-based dashboards: admins manage tasks and users, users log activities.Real-time status, task duration tracking.",
+      techStack: ["Python", "Django", "SQLite", "JavaScript", "jQuery"],
       githubUrl: "https://github.com/nawin-a/task-management-api",
       liveUrl: "https://task-api-demo.herokuapp.com",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop"
+      image: "pdf/blackalaram.png"
     },
     {
       id: 2,
-      title: "Data Analytics Dashboard",
-      description: "Interactive dashboard using Streamlit and Plotly for visualizing sales data with real-time updates and filtering capabilities.",
-      techStack: ["Python", "Streamlit", "Plotly", "Pandas", "NumPy"],
+      title: "Invoice Data Extraction System Using Gemini AI",
+      description: " Built a system that leverages Gemini AI to extract invoice data from PDF and image files with high accuracy using OCR and machine learning.",
+      techStack: ["Python", "Gemini API", "Django", "JavaScript", "PostgreSQL"],
       githubUrl: "https://github.com/nawin-a/data-dashboard",
       liveUrl: "https://data-dashboard-app.streamlit.app",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
+      image: "pdf/blackinvoice.jpg"
     },
     {
       id: 3,
-      title: "E-commerce Web App",
-      description: "Full-stack e-commerce application with Django backend, React frontend, payment integration, and inventory management.",
-      techStack: ["Django", "React", "PostgreSQL", "Stripe", "Bootstrap"],
-      githubUrl: "https://github.com/nawin-a/ecommerce-app",
-      liveUrl: "https://ecommerce-demo.netlify.app",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop"
-    },
-    {
-      id: 4,
-      title: "Weather Forecast API",
-      description: "Flask-based API that aggregates weather data from multiple sources and provides forecasts with caching and rate limiting.",
-      techStack: ["Flask", "SQLite", "Redis", "OpenWeatherMap API", "Docker"],
+      title: "Bulk File uploadation",
+      description: " Productivity web app with role-based dashboards: admins manage tasks and users, users log activities.Real-time status, task duration tracking.",
+      techStack: ["Python", "SQLite", "Django", "jQuery", "JavaScript","Docker"],
       githubUrl: "https://github.com/nawin-a/weather-api",
       liveUrl: "https://weather-forecast-api.herokuapp.com",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop"
-    }
+      image: "pdf/blackfile.png"
+    },
+    // {
+    //   id: 4,
+    //   title: "Add project here",
+    //   description: "Full-stack e-commerce application with Django backend, React frontend, payment integration, and inventory management.",
+    //   techStack: ["Django", "React", "PostgreSQL", "Stripe", "Bootstrap"],
+    //   githubUrl: "https://github.com/nawin-a/ecommerce-app",
+    //   liveUrl: "https://ecommerce-demo.netlify.app",
+    //   image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop"
+    // }
   ]
 };

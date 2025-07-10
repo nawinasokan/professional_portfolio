@@ -21,7 +21,7 @@ const CareerSummary = ({ summary }) => {
           <Card className="bg-gray-900/50 border-gray-700 shadow-2xl backdrop-blur-sm hover:shadow-3xl transition-all duration-500 group">
             <CardContent className="p-8">
               <div className="relative">
-                <p className="text-gray-300 text-lg leading-relaxed relative z-10 group-hover:text-white transition-colors duration-300">
+                <p className="text-gray-300 text-justify text-lg leading-relaxed relative z-10 group-hover:text-white transition-colors duration-300">
                   {summary}
                 </p>
               </div>
