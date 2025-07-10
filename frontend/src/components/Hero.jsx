@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { Download, ChevronDown } from 'lucide-react';
+import { Avatar, AvatarImage } from './ui/avatar';
+import { Download } from 'lucide-react';
 
 const Hero = ({ data }) => {
   const scrollToNext = () => {
@@ -18,14 +18,14 @@ const Hero = ({ data }) => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden" id='home'>
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full animate-pulse"></div>
         <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-l from-green-500/10 to-blue-500/10 rounded-full animate-pulse delay-1000"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 mt-[21%] md:mt-[7%]">
         <div className="text-center max-w-4xl mx-auto">
           {/* Avatar with animated border */}
           <div className="mb-8 relative inline-block">
@@ -40,13 +40,6 @@ const Hero = ({ data }) => {
           <h1 className="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 bg-clip-text text-transparent animate-gradient-x">
             {data.name}
           </h1>
-
-          {/* Title with typewriter effect */}
-          <h2 className="text-2xl md:text-3xl font-medium text-blue-400 mb-6 relative">
-            <span className="inline-block animate-typewriter">
-              {data.title}
-            </span>
-          </h2>
 
           {/* Tagline with fade-in animation */}
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-up">
@@ -87,11 +80,6 @@ const Hero = ({ data }) => {
             </a>
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronDown className="w-8 h-8 text-gray-400 cursor-pointer hover:text-blue-400 transition-colors" onClick={scrollToNext} />
       </div>
     </section>
   );

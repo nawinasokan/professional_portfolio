@@ -35,7 +35,7 @@ const Contact = ({ personalData }) => {
   ];
 
   return (
-    <footer className="py-20 bg-gray-900 relative overflow-hidden">
+    <footer className="py-20 bg-gray-900 relative overflow-hidden" id='contact'>
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-purple-500/10"></div>

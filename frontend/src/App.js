@@ -10,10 +10,12 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
 import Contact from "./components/Contact";
+import Navbar from "./components/Navbar";
 
 const Portfolio = () => {
   return (
     <div className="min-h-screen bg-gray-900">
+      <Navbar/>
       <Hero data={portfolioData.personal} />
       <CareerSummary summary={portfolioData.careerSummary} />
       <Experience experiences={portfolioData.experience} />

@@ -18,7 +18,7 @@ const Resume = ({ personalData }) => {
   };
 
   return (
-    <section className="py-20 bg-gray-900 relative overflow-hidden">
+    <section className="py-20 bg-gray-900 relative overflow-hidden" id='resume'>
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-purple-500/10 transform -skew-y-1"></div>

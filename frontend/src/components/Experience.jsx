@@ -5,7 +5,7 @@ import { MapPin, Calendar, CheckCircle } from 'lucide-react';
 
 const Experience = ({ experiences }) => {
   return (
-    <section className="py-20 bg-gray-900 relative overflow-hidden">
+    <section className="py-20 bg-gray-900 relative overflow-hidden" id='experience'>
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 transform -skew-y-3"></div>

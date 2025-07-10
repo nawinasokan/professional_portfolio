@@ -95,23 +95,6 @@ code {
   }
 }
 
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  51%, 100% {
-    opacity: 0;
-  }
-}
 
 @keyframes fade-in-up {
   from {
@@ -141,10 +124,6 @@ code {
 
 .animate-fade-in-up {
   animation: fade-in-up 1s ease-out 0.5s both;
-}
-
-.animate-spin-slow {
-  animation: spin-slow 8s linear infinite;
 }
 
 /* Enhanced scrollbar */

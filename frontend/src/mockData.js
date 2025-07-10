@@ -7,7 +7,7 @@ export const portfolioData = {
     phone: "+91 8300796919",
     linkedin: "https://linkedin.com/in/nawin-a-dev",
     github: "https://github.com/nawinasokan",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+    avatar: "pdf/avatar.jpg"
   },
   
   careerSummary: "Passionate Python Developer with 1+ year of hands-on experience in web development, API design, and data processing. Proficient in Django, Flask, and modern web technologies. Strong problem-solving skills with a focus on writing clean, efficient code. Experienced in working with databases, REST APIs, and cloud platforms. Seeking opportunities to contribute to innovative projects and grow in a dynamic development environment.",
