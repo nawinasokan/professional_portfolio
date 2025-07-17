@@ -120,9 +120,9 @@ export const portfolioData = {
       id: 4,
       title: "Budget Planner Application",
       description: "Smart finance tracker with income/expense logging, category-wise analysis, and savings goals. Visual dashboards give real-time insights for better money management.",
-      techStack: ["React", "JavaScript", "Bootstrap"],
-      githubUrl: "https://github.com/nawinasokan/budgetplan",
-      liveUrl: "https://budgetplan-dev.vercel.app/",
+      techStack: ["Django", "JavaScript", "Postgres","Bootstrap"],
+      githubUrl: "https://github.com/nawinasokan/budget_app",
+      liveUrl: "https://budget-app-ddms.onrender.com/",
       image: "pdf/bp.jpeg"
     }
   ]
