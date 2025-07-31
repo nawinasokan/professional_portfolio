@@ -94,19 +94,19 @@ const Projects = ({ projects }) => {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all duration-300 flex-1"
+                        className="border-cyan-500 text-dark-400 hover:bg-cyan-500 hover:text-white transition-all duration-300 flex-1"
                         onClick={() => window.open(project.liveUrl, '_blank')}
                       >
-                        <ExternalLink className="w-4 h-4 mr-1" />
+                        <ExternalLink className="w-4 h-4 mr-1 text-dark-400" />
                         Live Demo
                       </Button>
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="border-gray-600 text-gray-400 hover:bg-gray-600 hover:text-white transition-all duration-300 flex-1"
+                        className="border-gray-600 text-dark-400 hover:bg-gray-600 hover:text-white transition-all duration-300 flex-1"
                         onClick={() => window.open(project.githubUrl, '_blank')}
                       >
-                        <Github className="w-4 h-4 mr-1" />
+                        <Github className="w-4 h-4 mr-1 text-dark-400" />
                         Code
                       </Button>
                     </div>

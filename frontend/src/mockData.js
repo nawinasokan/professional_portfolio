@@ -93,7 +93,7 @@ export const portfolioData = {
       id: 1,
       title: "Task Management and Time Tracking Web Application",
       description: " Productivity web app with role-based dashboards: admins manage tasks and users, users log activities.Real-time status, task duration tracking.",
-      techStack: ["Python", "Django", "SQLite", "JavaScript", "jQuery"],
+      techStack: ["Python", "Fast API", "SQLite", "JavaScript", "jQuery"],
       githubUrl: "https://github.com/nawinasokan/budgetplan",
       liveUrl: "https://budgetplan-dev.vercel.app/",
       image: "pdf/blackalaram.png"
@@ -109,18 +109,18 @@ export const portfolioData = {
     },
     {
       id: 3,
-      title: "Bulk File uploadation",
-      description: " Productivity web app with role-based dashboards: admins manage tasks and users, users log activities.Real-time status, task duration tracking.",
-      techStack: ["Python", "SQLite", "Django", "jQuery", "JavaScript","Docker"],
-      githubUrl: "https://github.com/nawinasokan/F1",
-      liveUrl: "https://github.com/nawinasokan/F1",
-      image: "pdf/blackfile.png"
+      title: "Smart AI Assist",
+      description: "Single-page AI tool that generates content like emails, blogs, summaries, and code using Gemini API, built with Flask and Bootstrap.",
+      techStack: ["Python", "Gemini API", "Flask", "Bootstrap"],
+      githubUrl: "https://github.com/nawinasokan/Smart_Ai",
+      liveUrl: "https://smart-ai-assist.onrender.com/",
+      image: "pdf/smart_ai.png"
     },
-    {
+    { 
       id: 4,
       title: "Budget Planner Application",
       description: "Smart finance tracker with income/expense logging, category-wise analysis, and savings goals. Visual dashboards give real-time insights for better money management.",
-      techStack: ["Django", "JavaScript", "Postgres","Bootstrap"],
+      techStack: ["Python", "Django", "JavaScript", "Postgres","Bootstrap"],
       githubUrl: "https://github.com/nawinasokan/budget_app",
       liveUrl: "https://budget-app-ddms.onrender.com/",
       image: "pdf/bp.jpeg"
