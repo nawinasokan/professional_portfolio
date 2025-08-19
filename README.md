@@ -1,6 +1,3 @@
-Here’s a clean, copy-ready **README.md** for your project:
-
-````markdown
 # Nawin Asokan - Professional Portfolio
 
 This repository contains my personal **professional portfolio**, built with **React, Tailwind CSS, and modern UI components**. It showcases my career journey, skills, projects, qualifications, and achievements in a simple, interactive, and responsive design.
@@ -39,7 +36,7 @@ Clone the repository:
 ```bash
 git clone repo-professional_portfolio.git
 cd nawinasokan-professional_portfolio/frontend
-````
+```
 
 ## Install dependencies:
 
