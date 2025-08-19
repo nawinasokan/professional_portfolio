@@ -41,19 +41,19 @@ git clone repo-professional_portfolio.git
 cd nawinasokan-professional_portfolio/frontend
 ````
 
-Install dependencies:
+## Install dependencies:
 
 ```bash
 npm install
 ```
 
-Run the development server:
+## Run the development server:
 
 ```bash
 npm start
 ```
 
-Build for production:
+## Build for production:
 
 ```bash
 npm run build
