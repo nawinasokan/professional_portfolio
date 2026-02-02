@@ -63,16 +63,16 @@ const Projects = ({ projects }) => {
                           rel="noopener noreferrer"
                           className="text-gray-400 hover:text-white transition-colors"
                         >
-                          <Github className="w-5 h-5" />
+                          <ExternalLink className="w-5 h-5" />
                         </a>
-                        <a 
+                        {/* <a 
                           href={project.liveUrl} 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="text-gray-400 hover:text-cyan-400 transition-colors"
                         >
                           <ExternalLink className="w-5 h-5" />
-                        </a>
+                        </a> */}
                       </div>
                     </div>
 
@@ -91,7 +91,7 @@ const Projects = ({ projects }) => {
 
                     {/* Action buttons */}
                     <div className="flex space-x-3">
-                      <Button 
+                      {/* <Button 
                         variant="outline" 
                         size="sm" 
                         className="border-cyan-500 text-dark-400 hover:bg-cyan-500 hover:text-white transition-all duration-300 flex-1"
@@ -99,14 +99,14 @@ const Projects = ({ projects }) => {
                       >
                         <ExternalLink className="w-4 h-4 mr-1 text-dark-400" />
                         Live Demo
-                      </Button>
+                      </Button> */}
                       <Button 
                         variant="outline" 
                         size="sm" 
                         className="border-gray-600 text-dark-400 hover:bg-gray-600 hover:text-white transition-all duration-300 flex-1"
                         onClick={() => window.open(project.githubUrl, '_blank')}
                       >
-                        <Github className="w-4 h-4 mr-1 text-dark-400" />
+                        <ExternalLink className="w-4 h-4 mr-1 text-dark-400" />
                         Code
                       </Button>
                     </div>

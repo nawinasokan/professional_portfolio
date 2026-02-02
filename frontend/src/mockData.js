@@ -1,17 +1,26 @@
+const calculateExperienceYears = (startDate) => {
+  const start = new Date(startDate);
+  const today = new Date();
+  const years = (today - start) / (1000 * 60 * 60 * 24 * 365.25);
+  return years.toFixed(1);
+};
+
+const experienceYears = calculateExperienceYears("2024-08-12");
+
 export const portfolioData = {
   personal: {
     name: "Nawin A",
     title: "Software Developer",
-    tagline: "Python Developer with 1 year of experience seeking new opportunities",
+    tagline: `Python Developer with ${experienceYears} years of experience seeking new opportunities`,
     email: "nawinasokan16@gmail.com",
     phone: "+91 8300796919",
     linkedin: "https://linkedin.com/in/nawin-a-dev",
     github: "https://github.com/nawinasokan",
-    avatar: "pdf/avatar.jpg"
+    avatar: "pdf/avatarme.png"
   },
   
-  careerSummary: "Passionate Python Developer with 1+ year of hands-on experience in web development, API design, and data processing. Proficient in Django, Flask, and modern web technologies. Strong problem-solving skills with a focus on writing clean, efficient code. Experienced in working with databases, REST APIs, and cloud platforms. Seeking opportunities to contribute to innovative projects and grow in a dynamic development environment.",
-  
+  careerSummary: `Passionate Python Developer with ${experienceYears} years of hands-on experience in web development, API design, and data processing. Proficient in Django, Flask, and modern web technologies. Strong problem-solving skills with a focus on writing clean, efficient code. Experienced in working with databases, REST APIs, and cloud platforms. Seeking opportunities to contribute to innovative projects and grow in a dynamic development environment.`,
+
   experience: [
     {
       id: 1,
@@ -28,7 +37,7 @@ export const portfolioData = {
     },
     {
       id: 2,
-      title: "Software Developer",
+      title: "Executive - Software Developer",
       company: "Mahima Technology pvt ltd",
       duration: "FEB 2025 - Present",
       location: "Salem, India",
@@ -65,6 +74,23 @@ export const portfolioData = {
       duration: "2024",
       grade: "Grade: A",
     description: "Comprehensive cloud infrastructure, virtualization, AWS services and cloud security practices."
+    }
+  ],
+
+  achievements:[
+    {
+      id: 1,
+      title: "Rising Star Award",
+      description: "Recognized for exceptional performance and contributions in software development.",
+      image_url: "pdf/nawin_award.jpg",
+      year: 2026
+    },
+    {
+      id: 2,
+      title: "Graduation",
+      description: "Graduated with a Bachelor of Engineering in Electronics and Communication.",
+      image_url: "pdf/graduation.jpeg",
+      year: 2024
     }
   ],
   

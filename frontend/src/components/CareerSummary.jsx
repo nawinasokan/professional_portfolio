@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
 
-const CareerSummary = ({ summary }) => {
+const CareerSummary = ({ summary, experienceYears }) => {
   return (
     <section id="career-summary" className="py-20 bg-gray-800 relative overflow-hidden">
       {/* Background pattern */}
@@ -30,7 +30,7 @@ const CareerSummary = ({ summary }) => {
               <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="text-center group-hover:scale-105 transition-transform duration-300">
                   <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    1+
+                    {experienceYears}+
                   </div>
                   <div className="text-gray-400 text-sm">Years Experience</div>
                 </div>

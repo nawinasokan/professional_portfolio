@@ -117,9 +117,6 @@ const Contact = ({ personalData }) => {
             <p className="text-gray-400 mb-4">
               © {new Date().getFullYear()} {personalData.name}. All rights reserved.
             </p>
-            <p className="text-gray-500 text-sm">
-              Built with React, TailwindCSS, and passion for clean code.
-            </p>
           </div>
         </div>
       </div>

@@ -11,15 +11,23 @@ import Projects from "./components/Projects";
 import Resume from "./components/Resume";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
+import { calculateExperienceYears } from "./utils/experience";
+import Acheivements from "./components/Acheivements";
+
+const experienceYears = calculateExperienceYears("2024-08-12");
 
 const Portfolio = () => {
   return (
     <div className="min-h-screen bg-gray-900">
       <Navbar/>
       <Hero data={portfolioData.personal} />
-      <CareerSummary summary={portfolioData.careerSummary} />
+      <CareerSummary
+        summary={portfolioData.careerSummary}
+        experienceYears={experienceYears}
+      />
       <Experience experiences={portfolioData.experience} />
       <Qualifications qualifications={portfolioData.qualifications} />
+      <Acheivements achievements={portfolioData.achievements} />
       <Skills skills={portfolioData.skills} />
       <Projects projects={portfolioData.projects} />
       <Resume personalData={portfolioData.personal} />

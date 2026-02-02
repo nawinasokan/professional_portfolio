@@ -31,10 +31,19 @@ This repository contains my personal **professional portfolio**, built with **Re
 
 ## 📦 Installation & Setup
 
+Install the Latest version of NodeJS
+
+## Verify installation
+```bash
+node -v
+npm -v
+```
+
+
 Clone the repository:
 
 ```bash
-git clone repo-professional_portfolio.git
+git clone https://github.com/nawinasokan/professional_portfolio.git
 cd nawinasokan-professional_portfolio/frontend
 ```
 

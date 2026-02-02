@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Avatar, AvatarImage } from './ui/avatar';
-import { Download } from 'lucide-react';
+import { Download, X } from 'lucide-react';
 
 const Hero = ({ data }) => {
+  const [open, setOpen] = useState(false);
+
   const scrollToNext = () => {
     const nextSection = document.getElementById('career-summary');
     nextSection?.scrollIntoView({ behavior: 'smooth' });
@@ -12,8 +14,8 @@ const Hero = ({ data }) => {
   const downloadResume = () => {
     // Mock download functionality
     const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/pdf/Nawin__Resume.pdf`;
-    link.download = 'Nawin__Resume.pdf';
+    link.href = `${process.env.PUBLIC_URL}/pdf/Nawin_Asokan_Updated_Resume.pdf`;
+    link.download = 'Nawin_Asokan_Updated_Resume.pdf';
     link.click();
   };
 
@@ -28,12 +30,19 @@ const Hero = ({ data }) => {
       <div className="container mx-auto px-6 relative z-10 mt-[21%] md:mt-[7%]">
         <div className="text-center max-w-4xl mx-auto">
           {/* Avatar with animated border */}
-          <div className="mb-8 relative inline-block">
-              <div className="rounded-full bg-gray-900 p-1">
-                <Avatar className="w-32 h-32 mx-auto border-4 border-gray-700 shadow-2xl">
-                  <AvatarImage src={data.avatar} alt={data.name} />
-                </Avatar>
-              </div>
+          <div className="mb-8 relative inline-block cursor-pointer">
+            <div className="rounded-full bg-gray-900 p-1">
+              <Avatar
+                className="w-32 h-32 mx-auto border-4 border-gray-700 shadow-2xl overflow-hidden"
+                onClick={() => setOpen(true)}
+              >
+                <AvatarImage
+                  src={data.avatar}
+                  alt={data.name}
+                  className="w-full h-full object-cover object-[center_10%]"
+                />
+              </Avatar>
+            </div>
           </div>
 
           {/* Name with gradient text */}
@@ -81,6 +90,44 @@ const Hero = ({ data }) => {
           </div>
         </div>
       </div>
+      {/* ================= MODAL ================= */}
+      {open && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          onClick={() => setOpen(false)}
+        >
+          <div
+            className="relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute -top-4 -right-4 bg-black text-white rounded-full p-2 hover:scale-110 transition"
+            >
+              ×
+            </button>
+
+            {/* ✅ Image (NO ZOOM, TRUE SIZE) */}
+            <img
+              src={data.avatar}
+              alt={data.name}
+              className="
+                max-w-[90vw]
+                max-h-[90vh]
+                w-auto
+                h-auto
+                object-contain
+                transform-none
+                scale-100
+                rounded-xl
+                shadow-2xl
+              "
+            />
+          </div>
+        </div>
+      )}
+
     </section>
   );
 };
