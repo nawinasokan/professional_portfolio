@@ -121,7 +121,8 @@ export const portfolioData = {
       description: " Productivity web app with role-based dashboards: admins manage tasks and users, users log activities.Real-time status, task duration tracking.",
       techStack: ["Python", "Fast API", "SQLite", "JavaScript", "jQuery"],
       githubUrl: "https://github.com/nawinasokan/budgetplan",
-      liveUrl: "https://budgetplan-dev.vercel.app/",
+      liveUrl: "https://github.com/nawinasokan/budgetplan",
+      // liveUrl: "https://budgetplan-dev.vercel.app/",
       image: "pdf/blackalaram.png"
     },
     {
@@ -130,16 +131,17 @@ export const portfolioData = {
       description: " Built a system that leverages Gemini AI to extract invoice data from PDF and image files with high accuracy using OCR and machine learning.",
       techStack: ["Python", "Gemini API", "Django", "JavaScript", "PostgreSQL"],
       githubUrl: "https://github.com/nawinasokan/budgetplan",
-      liveUrl: "https://budgetplan-dev.vercel.app/",
+      // liveUrl: "https://budgetplan-dev.vercel.app/",
+      liveUrl: "https://github.com/nawinasokan/budgetplan",
       image: "pdf/blackinvoice.jpg"
     },
-    {
+    { 
       id: 3,
       title: "Smart AI Assist",
       description: "Single-page AI tool that generates content like emails, blogs, summaries, and code using Gemini API, built with Flask and Bootstrap.",
       techStack: ["Python", "Gemini API", "Flask", "Bootstrap"],
       githubUrl: "https://github.com/nawinasokan/Smart_Ai",
-      liveUrl: "https://smart-ai-assist.onrender.com/",
+      liveUrl: "https://smart-ai-mocha.vercel.app/login",
       image: "pdf/smart_ai.png"
     },
     { 
@@ -148,7 +150,7 @@ export const portfolioData = {
       description: "Smart finance tracker with income/expense logging, category-wise analysis, and savings goals. Visual dashboards give real-time insights for better money management.",
       techStack: ["Python", "Django", "JavaScript", "Postgres","Bootstrap"],
       githubUrl: "https://github.com/nawinasokan/budget_app",
-      liveUrl: "https://budget-app-ddms.onrender.com/",
+      liveUrl: "https://github.com/nawinasokan/budget_app",
       image: "pdf/bp.jpeg"
     }
   ]
