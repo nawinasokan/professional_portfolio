@@ -91,22 +91,24 @@ const Projects = ({ projects }) => {
 
                     {/* Action buttons */}
                     <div className="flex space-x-3">
-                      {/* <Button 
-                        variant="outline" 
-                        size="sm" 
-                        className="border-cyan-500 text-dark-400 hover:bg-cyan-500 hover:text-white transition-all duration-300 flex-1"
-                        onClick={() => window.open(project.liveUrl, '_blank')}
-                      >
-                        <ExternalLink className="w-4 h-4 mr-1 text-dark-400" />
-                        Live Demo
-                      </Button> */}
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
-                        className="border-gray-600 text-dark-400 hover:bg-gray-600 hover:text-white transition-all duration-300 flex-1"
+                      {project.liveUrl && project.liveUrl !== project.githubUrl && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all duration-300 flex-1"
+                          onClick={() => window.open(project.liveUrl, '_blank')}
+                        >
+                          <ExternalLink className="w-4 h-4 mr-1" />
+                          Live Demo
+                        </Button>
+                      )}
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="border-gray-600 text-gray-300 hover:bg-gray-600 hover:text-white transition-all duration-300 flex-1"
                         onClick={() => window.open(project.githubUrl, '_blank')}
                       >
-                        <ExternalLink className="w-4 h-4 mr-1 text-dark-400" />
+                        <Github className="w-4 h-4 mr-1" />
                         Code
                       </Button>
                     </div>

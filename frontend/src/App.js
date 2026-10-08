@@ -11,6 +11,7 @@ import Projects from "./components/Projects";
 import Resume from "./components/Resume";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
 import { calculateExperienceYears } from "./utils/experience";
 import Acheivements from "./components/Acheivements";
 
@@ -32,6 +33,7 @@ const Portfolio = () => {
       <Projects projects={portfolioData.projects} />
       <Resume personalData={portfolioData.personal} />
       <Contact personalData={portfolioData.personal} />
+      <ScrollToTop />
     </div>
   );
 };

@@ -26,7 +26,7 @@ const Skills = ({ skills }) => {
   };
 
   return (
-    <section className="py-20 bg-gray-900 relative overflow-hidden">
+    <section className="py-20 bg-gray-900 relative overflow-hidden" id="skills">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-pink-500/10 transform skew-y-1"></div>
       </div>

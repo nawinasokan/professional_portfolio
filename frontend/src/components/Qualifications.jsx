@@ -5,7 +5,7 @@ import { GraduationCap, Award, Calendar } from 'lucide-react';
 
 const Qualifications = ({ qualifications }) => {
   return (
-    <section className="py-20 bg-gray-800 relative overflow-hidden">
+    <section className="py-20 bg-gray-800 relative overflow-hidden" id="qualifications">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-l from-green-500/20 to-blue-500/20 transform skew-y-2"></div>

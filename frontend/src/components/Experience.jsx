@@ -22,15 +22,15 @@ const Experience = ({ experiences }) => {
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+            <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
 
             {experiences.map((exp, index) => (
               <div key={exp.id} className="relative mb-12 group">
                 {/* Timeline dot */}
-                <div className="absolute left-6 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-gray-900 group-hover:scale-125 transition-transform duration-300"></div>
+                <div className="absolute left-2 md:left-6 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-gray-900 group-hover:scale-125 transition-transform duration-300"></div>
 
                 {/* Content card */}
-                <div className="ml-20">
+                <div className="ml-12 md:ml-20">
                   <Card className="bg-gray-800/50 border-gray-700 shadow-xl backdrop-blur-sm hover:shadow-2xl hover:bg-gray-800/70 transition-all duration-500 group-hover:scale-105">
                     <CardContent className="p-6">
                       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">

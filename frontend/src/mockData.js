@@ -113,7 +113,7 @@ export const portfolioData = {
       techStack: ["Django", "Python", "PostgreSQL", "Gemini API"],
       githubUrl: "https://github.com/nawinasokan/budgetplan",
       liveUrl: "https://github.com/nawinasokan/budgetplan",
-      image: "pdf/blackfile.png"
+      image: "pdf/audio-annotation-workspace.png"
     },
     {
       id: 2,
@@ -131,7 +131,7 @@ export const portfolioData = {
       techStack: ["Python", "Flask", "Gemini API", "JavaScript"],
       githubUrl: "https://github.com/nawinasokan/Smart_Ai",
       liveUrl: "https://smart-ai-mocha.vercel.app/login",
-      image: "pdf/smart_ai.png"
+      image: "pdf/smart_ai_workspace.png"
     }
   ]
 };
