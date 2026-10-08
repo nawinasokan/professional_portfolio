@@ -14,8 +14,8 @@ const Hero = ({ data }) => {
   const downloadResume = () => {
     // Mock download functionality
     const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/pdf/Nawin_Asokan_Updated_Resume.pdf`;
-    link.download = 'Nawin_Asokan_Updated_Resume.pdf';
+    link.href = `${process.env.PUBLIC_URL}/pdf/Nawin_Asokan_Resume.pdf`;
+    link.download = 'Nawin_Asokan_Resume.pdf';
     link.click();
   };
 

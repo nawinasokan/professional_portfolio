@@ -9,55 +9,43 @@ const experienceYears = calculateExperienceYears("2024-08-12");
 
 export const portfolioData = {
   personal: {
-    name: "Nawin A",
-    title: "Software Developer",
-    tagline: `Python Developer with ${experienceYears} years of experience seeking new opportunities`,
+    name: "Nawin Asokan",
+    title: "Executive - Software Developer",
+    tagline: `Python Developer with ${experienceYears}+ years of experience building scalable web applications, REST APIs, and backend solutions`,
     email: "nawinasokan16@gmail.com",
     phone: "+91 8300796919",
     linkedin: "https://linkedin.com/in/nawin-a-dev",
     github: "https://github.com/nawinasokan",
-    avatar: "pdf/avatarme.png"
+    avatar: "pdf/avatarme.jpeg"
   },
-  
-  careerSummary: `Passionate Python Developer with ${experienceYears} years of hands-on experience in web development, API design, and data processing. Proficient in Django, Flask, and modern web technologies. Strong problem-solving skills with a focus on writing clean, efficient code. Experienced in working with databases, REST APIs, and cloud platforms. Seeking opportunities to contribute to innovative projects and grow in a dynamic development environment.`,
+
+  careerSummary: `Python Developer with ${experienceYears}+ years of experience developing scalable web applications, REST APIs, and backend solutions. Proficient in Django, FastAPI, and Flask, with hands-on deployment experience on AWS and GCP. Skilled in database design and REST API development, ensuring scalable and efficient solutions. Recognized with the Best Project Award (2024) for innovative problem-solving. Passionate about developing scalable Python-based backend solutions in dynamic environments.`,
 
   experience: [
     {
       id: 1,
-      title: "Trainee - Software Development",
-      company: "Mahima Technology pvt ltd",
-      duration: "AUG 2024 - FEB 2025",
-      location: "Salem, India",
-      description: "Developing web applications using Django frameworks. Built REST APIs for mobile applications and implemented database optimization strategies.",
+      title: "Executive Software Developer",
+      company: "Mahima Technology Pvt Ltd",
+      duration: "AUG 2024 - Present",
+      location: "Salem, Tamil Nadu, India",
+      description: "Building backend systems and full-stack projects using Django, FastAPI, PostgreSQL, Celery, and Redis, with deployments on AWS.",
       achievements: [
-        "Developed 5+ web applications using Django framework",
-        "Improved API response time by 40% through optimization",
-        "Collaborated with cross-functional teams on agile projects"
-      ]
-    },
-    {
-      id: 2,
-      title: "Executive - Software Developer",
-      company: "Mahima Technology pvt ltd",
-      duration: "FEB 2025 - Present",
-      location: "Salem, India",
-      description: "Worked on AI projects involving model development, training, and deployment using Python and ML libraries.",
-      achievements: [
-        "Built ML models for real-world use cases",
-        "Deployed AI apps with Streamlit and TensorFlow",
-        "Improved model accuracy by 15%"
+        "Built backend systems with Django, PostgreSQL, Celery and Redis, including a platform handling 150M+ rows",
+        "Improved database query efficiency by 15% across PostgreSQL and MySQL",
+        "Deployed and maintained applications on AWS (EC2, S3) with 99% uptime",
+        "Delivered a full-stack project with FastAPI endpoints and a JavaScript/Bootstrap front end"
       ]
     }
   ],
-  
+
   qualifications: [
     {
       id: 1,
-      degree: "Bachelor of Engineering in Electroics and Communication",
-      institution: "Anna University",
-      duration: "2020 - 2024",
-      grade: "CGPA: 8.4/10",
-      description: "Specialized in software engineering, data structures, and algorithms"
+      degree: "Bachelor of Engineering in Electronics and Communication Engineering",
+      institution: "Sona College of Technology (Anna University)",
+      duration: "Aug 2020 - May 2024",
+      grade: "CGPA: 8.46/10",
+      description: "Salem, Tamil Nadu"
     },
     {
       id: 2,
@@ -80,10 +68,10 @@ export const portfolioData = {
   achievements:[
     {
       id: 1,
-      title: "Rising Star Award",
-      description: "Recognized for exceptional performance and contributions in software development.",
+      title: "Best Project Award",
+      description: "Recognized with the Best Project Award for innovative problem-solving in software development.",
       image_url: "pdf/nawin_award.jpg",
-      year: 2026
+      year: 2024
     },
     {
       id: 2,
@@ -96,62 +84,54 @@ export const portfolioData = {
   
   skills: [
     { name: "Python", level: 90, category: "Programming" },
+    { name: "SQL", level: 80, category: "Programming" },
     { name: "JavaScript", level: 70, category: "Programming" },
-    { name: "Java", level: 70, category: "Programming" },
     { name: "Django", level: 95, category: "Framework" },
+    { name: "FastAPI", level: 80, category: "Framework" },
     { name: "Flask", level: 75, category: "Framework" },
-    { name: "FastAPI", level: 75, category: "Framework" },
+    { name: "React.js", level: 65, category: "Framework" },
     { name: "PostgreSQL", level: 85, category: "Database" },
+    { name: "MySQL", level: 75, category: "Database" },
+    { name: "MongoDB", level: 65, category: "Database" },
     { name: "SQLite", level: 75, category: "Database" },
     { name: "Git", level: 85, category: "Tools" },
+    { name: "GitHub", level: 85, category: "Tools" },
     { name: "Docker", level: 60, category: "DevOps" },
-    { name: "AWS", level: 65, category: "Cloud" },
-    { name: "Machine Learning", level: 80, category: "AI" },
-    { name: "Deep Learning", level: 70, category: "AI" },
-    { name: "Scikit-learn", level: 75, category: "AI" },
+    { name: "Linux", level: 70, category: "DevOps" },
+    { name: "AWS", level: 70, category: "Cloud" },
+    { name: "GCP", level: 60, category: "Cloud" },
     { name: "Problem Solving", level: 88, category: "Soft Skills" },
     { name: "Team Collaboration", level: 85, category: "Soft Skills" },
     { name: "Communication", level: 95, category: "Soft Skills" }
   ],
-  
+
   projects: [
     {
       id: 1,
-      title: "Task Management and Time Tracking Web Application",
-      description: " Productivity web app with role-based dashboards: admins manage tasks and users, users log activities.Real-time status, task duration tracking.",
-      techStack: ["Python", "Fast API", "SQLite", "JavaScript", "jQuery"],
+      title: "Audio Annotation & Transcription",
+      description: "Multi-stage audio annotation and transcription platform with AI-powered transcription, translation, task workflows, and role-based access control. Integrated Google Gemini AI APIs for automated speech-to-text transcription and translation, reducing manual annotation effort by 50%.",
+      techStack: ["Django", "Python", "PostgreSQL", "Gemini API"],
       githubUrl: "https://github.com/nawinasokan/budgetplan",
       liveUrl: "https://github.com/nawinasokan/budgetplan",
-      // liveUrl: "https://budgetplan-dev.vercel.app/",
-      image: "pdf/blackalaram.png"
+      image: "pdf/blackfile.png"
     },
     {
       id: 2,
-      title: "Invoice Data Extraction System Using Gemini AI",
-      description: " Built a system that leverages Gemini AI to extract invoice data from PDF and image files with high accuracy using OCR and machine learning.",
-      techStack: ["Python", "Gemini API", "Django", "JavaScript", "PostgreSQL"],
+      title: "F1 — Enterprise QC Audit & Reporting Platform",
+      description: "Multi-module audit and reporting platform with Excel ingestion, dynamic field mapping, 8+ report engines, and real-time dashboards handling 150M+ rows. Improved batch upload throughput by 5.2x and query performance by up to 78x through PostgreSQL partitioning, indexing, and query optimization.",
+      techStack: ["Django", "PostgreSQL", "Celery", "Redis"],
       githubUrl: "https://github.com/nawinasokan/budgetplan",
-      // liveUrl: "https://budgetplan-dev.vercel.app/",
       liveUrl: "https://github.com/nawinasokan/budgetplan",
-      image: "pdf/blackinvoice.jpg"
+      image: "pdf/bp.jpeg"
     },
-    { 
+    {
       id: 3,
       title: "Smart AI Assist",
-      description: "Single-page AI tool that generates content like emails, blogs, summaries, and code using Gemini API, built with Flask and Bootstrap.",
-      techStack: ["Python", "Gemini API", "Flask", "Bootstrap"],
+      description: "Single-page AI web app for email drafting, blog writing, and text summarization with async API calls and response caching, achieving <2s response latency. Reusable prompt-engineering layer for 3 content types, reducing token usage by 25%.",
+      techStack: ["Python", "Flask", "Gemini API", "JavaScript"],
       githubUrl: "https://github.com/nawinasokan/Smart_Ai",
       liveUrl: "https://smart-ai-mocha.vercel.app/login",
       image: "pdf/smart_ai.png"
-    },
-    { 
-      id: 4,
-      title: "Budget Planner Application",
-      description: "Smart finance tracker with income/expense logging, category-wise analysis, and savings goals. Visual dashboards give real-time insights for better money management.",
-      techStack: ["Python", "Django", "JavaScript", "Postgres","Bootstrap"],
-      githubUrl: "https://github.com/nawinasokan/budget_app",
-      liveUrl: "https://github.com/nawinasokan/budget_app",
-      image: "pdf/bp.jpeg"
     }
   ]
 };
