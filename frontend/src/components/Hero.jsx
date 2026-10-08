@@ -2,9 +2,23 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Avatar, AvatarImage } from './ui/avatar';
 import { Download, Mail, ChevronDown } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
+import PersonalEditDialog from './admin/PersonalEditDialog';
+import EditButton from './admin/EditButton';
+
+const HERO_FIELDS = [
+  { name: 'avatar_url', label: 'Avatar', type: 'image' },
+  { name: 'name', label: 'Name', type: 'text' },
+  { name: 'title', label: 'Title', type: 'text' },
+  { name: 'tagline', label: 'Tagline', type: 'textarea' },
+  { name: 'email', label: 'Email', type: 'text' },
+  { name: 'linkedin', label: 'LinkedIn URL', type: 'text' },
+  { name: 'github', label: 'GitHub URL', type: 'text' },
+];
 
 const Hero = ({ data }) => {
   const [open, setOpen] = useState(false);
+  const { canEdit } = useAuth();
 
   const scrollToNext = () => {
     const nextSection = document.getElementById('career-summary');
@@ -12,10 +26,10 @@ const Hero = ({ data }) => {
   };
 
   const downloadResume = () => {
-    // Mock download functionality
+    if (!data?.resume_url) return;
     const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/pdf/Nawin_Asokan_Resume.pdf`;
-    link.download = 'Nawin_Asokan_Resume.pdf';
+    link.href = data.resume_url;
+    link.download = 'Resume.pdf';
     link.click();
   };
 
@@ -37,12 +51,19 @@ const Hero = ({ data }) => {
                 onClick={() => setOpen(true)}
               >
                 <AvatarImage
-                  src={data.avatar}
+                  src={data.avatar_url}
                   alt={data.name}
                   className="w-full h-full object-cover object-[center_10%]"
                 />
               </Avatar>
             </div>
+            {canEdit && (
+              <PersonalEditDialog
+                trigger={<EditButton className="absolute bottom-0 right-0" />}
+                title="Edit Profile"
+                fields={HERO_FIELDS}
+              />
+            )}
           </div>
 
           {/* Name with gradient text */}
@@ -128,7 +149,7 @@ const Hero = ({ data }) => {
 
             {/* ✅ Image (NO ZOOM, TRUE SIZE) */}
             <img
-              src={data.avatar}
+              src={data.avatar_url}
               alt={data.name}
               className="
                 max-w-[90vw]

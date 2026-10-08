@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Download } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({ personalData }) => {
   const menuItems = [
     { label: 'Home', id: 'home' },
     { label: 'Summary', id: 'career-summary' },
@@ -20,9 +20,10 @@ const Navbar = () => {
   const handleNavClick = () => setMenuOpen(false);
 
   const downloadResume = () => {
+    if (!personalData?.resume_url) return;
     const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/pdf/Nawin_Asokan_Resume.pdf`;
-    link.download = 'Nawin_Asokan_Resume.pdf';
+    link.href = personalData.resume_url;
+    link.download = 'Resume.pdf';
     link.click();
   };
 

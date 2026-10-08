@@ -1,7 +1,14 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
+import { useAuth } from '../contexts/AuthContext';
+import PersonalEditDialog from './admin/PersonalEditDialog';
+import EditButton from './admin/EditButton';
+
+const SUMMARY_FIELDS = [{ name: 'career_summary', label: 'Career Summary', type: 'textarea' }];
 
 const CareerSummary = ({ summary, experienceYears }) => {
+  const { canEdit } = useAuth();
+
   return (
     <section id="career-summary" className="py-20 bg-gray-800 relative overflow-hidden">
       {/* Background pattern */}
@@ -21,6 +28,13 @@ const CareerSummary = ({ summary, experienceYears }) => {
           <Card className="bg-gray-900/50 border-gray-700 shadow-2xl backdrop-blur-sm hover:shadow-3xl transition-all duration-500 group">
             <CardContent className="p-8">
               <div className="relative">
+                {canEdit && (
+                  <PersonalEditDialog
+                    trigger={<EditButton className="absolute top-0 right-0 z-20" />}
+                    title="Edit Career Summary"
+                    fields={SUMMARY_FIELDS}
+                  />
+                )}
                 <p className="text-gray-300 text-justify text-lg leading-relaxed relative z-10 group-hover:text-white transition-colors duration-300">
                   {summary}
                 </p>

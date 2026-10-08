@@ -2,19 +2,23 @@ import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Download, FileText, Eye } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
+import ResumeUploadButton from './admin/ResumeUploadButton';
 
 const Resume = ({ personalData }) => {
+  const { canEdit } = useAuth();
+
   const downloadResume = () => {
-    // Mock download functionality
+    if (!personalData?.resume_url) return;
     const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/pdf/Nawin_Asokan_Resume.pdf`;
+    link.href = personalData.resume_url;
     link.download = `${personalData.name.replace(' ', '_')}_Resume.pdf`;
     link.click();
   };
 
   const viewResume = () => {
-    // Mock view functionality
-    window.open(`${process.env.PUBLIC_URL}/pdf/Nawin_Asokan_Resume.pdf`, '_blank');
+    if (!personalData?.resume_url) return;
+    window.open(personalData.resume_url, '_blank');
   };
 
   return (
@@ -98,6 +102,8 @@ const Resume = ({ personalData }) => {
                 <div className="mt-6 text-sm text-gray-400">
                   <p>PDF Format • Updated {new Date().toLocaleDateString()}</p>
                 </div>
+
+                {canEdit && <ResumeUploadButton />}
               </div>
             </CardContent>
           </Card>

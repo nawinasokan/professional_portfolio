@@ -1,8 +1,24 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from './ui/card';
 import { Award } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
+import { usePortfolioData } from '../contexts/PortfolioDataContext';
+import { deleteRow } from '../lib/portfolioApi';
+import ItemEditorDialog from './admin/ItemEditorDialog';
+import EditButton from './admin/EditButton';
+import DeleteButton from './admin/DeleteButton';
+import AddButton from './admin/AddButton';
+
+const ACHIEVEMENT_FIELDS = [
+  { name: 'image_url', label: 'Image', type: 'image' },
+  { name: 'title', label: 'Title', type: 'text' },
+  { name: 'description', label: 'Description', type: 'textarea' },
+  { name: 'year', label: 'Year', type: 'number' },
+];
 
 const Acheivements = ({ achievements = [] }) => {
+  const { canEdit } = useAuth();
+  const { refetch } = usePortfolioData();
   const [open, setOpen] = useState(false);
   const [activeImage, setActiveImage] = useState(null);
   const [activeTitle, setActiveTitle] = useState('');
@@ -66,6 +82,26 @@ const Acheivements = ({ achievements = [] }) => {
                 )}
 
                 <CardContent className="p-6">
+                  {canEdit && (
+                    <div className="flex justify-end gap-2 mb-2">
+                      <ItemEditorDialog
+                        trigger={<EditButton />}
+                        title="Edit Achievement"
+                        table="achievements"
+                        fields={ACHIEVEMENT_FIELDS}
+                        initialValues={ach}
+                        imageFolder="achievements"
+                        onSaved={refetch}
+                      />
+                      <DeleteButton
+                        confirmMessage={`Delete "${ach.title}"?`}
+                        onConfirm={async () => {
+                          await deleteRow('achievements', ach.id);
+                          refetch();
+                        }}
+                      />
+                    </div>
+                  )}
                   <Award className="w-9 h-9 text-green-400 mb-4" />
 
                   <h3 className="text-lg font-bold text-white mb-2">
@@ -80,6 +116,20 @@ const Acheivements = ({ achievements = [] }) => {
               </Card>
             ))}
           </div>
+
+          {canEdit && (
+            <div className="mt-8 flex justify-center">
+              <ItemEditorDialog
+                trigger={<AddButton label="Add Achievement" />}
+                title="Add Achievement"
+                table="achievements"
+                fields={ACHIEVEMENT_FIELDS}
+                initialValues={{ sort_order: achievements.length }}
+                imageFolder="achievements"
+                onSaved={refetch}
+              />
+            </div>
+          )}
 
         </div>
       </section>

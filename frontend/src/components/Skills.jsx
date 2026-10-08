@@ -2,8 +2,23 @@ import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { Progress } from './ui/progress';
+import { useAuth } from '../contexts/AuthContext';
+import { usePortfolioData } from '../contexts/PortfolioDataContext';
+import { deleteRow } from '../lib/portfolioApi';
+import ItemEditorDialog from './admin/ItemEditorDialog';
+import EditButton from './admin/EditButton';
+import DeleteButton from './admin/DeleteButton';
+import AddButton from './admin/AddButton';
+
+const SKILL_FIELDS = [
+  { name: 'name', label: 'Skill Name', type: 'text' },
+  { name: 'level', label: 'Level (0-100)', type: 'number' },
+  { name: 'category', label: 'Category', type: 'text' },
+];
 
 const Skills = ({ skills }) => {
+  const { canEdit } = useAuth();
+  const { refetch } = usePortfolioData();
   const skillCategories = [...new Set(skills.map(skill => skill.category))];
   
   const getSkillsByCategory = (category) => {
@@ -53,22 +68,44 @@ const Skills = ({ skills }) => {
 
                   <div className="space-y-4">
                     {getSkillsByCategory(category).map((skill, index) => (
-                      <div key={skill.name} className="group/skill">
+                      <div key={skill.id} className="group/skill">
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-gray-300 font-medium group-hover/skill:text-white transition-colors">
                             {skill.name}
                           </span>
-                          <Badge variant="secondary" className="bg-purple-500/20 text-purple-400 border-purple-500/30 group-hover/skill:bg-purple-500/30 transition-colors">
-                            {skill.level}%
-                          </Badge>
+                          <div className="flex items-center gap-2">
+                            <Badge variant="secondary" className="bg-purple-500/20 text-purple-400 border-purple-500/30 group-hover/skill:bg-purple-500/30 transition-colors">
+                              {skill.level}%
+                            </Badge>
+                            {canEdit && (
+                              <>
+                                <ItemEditorDialog
+                                  trigger={<EditButton className="h-7 w-7" />}
+                                  title="Edit Skill"
+                                  table="skills"
+                                  fields={SKILL_FIELDS}
+                                  initialValues={skill}
+                                  onSaved={refetch}
+                                />
+                                <DeleteButton
+                                  confirmMessage={`Delete "${skill.name}"?`}
+                                  className="h-7 w-7"
+                                  onConfirm={async () => {
+                                    await deleteRow('skills', skill.id);
+                                    refetch();
+                                  }}
+                                />
+                              </>
+                            )}
+                          </div>
                         </div>
-                        
+
                         <div className="relative">
-                          <Progress 
-                            value={skill.level} 
+                          <Progress
+                            value={skill.level}
                             className="h-2 bg-gray-700 group-hover/skill:bg-gray-600 transition-colors"
                           />
-                          <div 
+                          <div
                             className={`absolute top-0 left-0 h-2 bg-gradient-to-r ${getCategoryColor(category)} rounded-full transition-all duration-1000 ease-out`}
                             style={{ width: `${skill.level}%` }}
                           ></div>
@@ -80,6 +117,19 @@ const Skills = ({ skills }) => {
               </Card>
             ))}
           </div>
+
+          {canEdit && (
+            <div className="mt-8 flex justify-center">
+              <ItemEditorDialog
+                trigger={<AddButton label="Add Skill" />}
+                title="Add Skill"
+                table="skills"
+                fields={SKILL_FIELDS}
+                initialValues={{ sort_order: skills.length, level: 50 }}
+                onSaved={refetch}
+              />
+            </div>
+          )}
 
           {/* Skill summary cards */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">

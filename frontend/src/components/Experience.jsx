@@ -2,8 +2,27 @@ import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { MapPin, Calendar, CheckCircle } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
+import { usePortfolioData } from '../contexts/PortfolioDataContext';
+import { deleteRow } from '../lib/portfolioApi';
+import ItemEditorDialog from './admin/ItemEditorDialog';
+import EditButton from './admin/EditButton';
+import DeleteButton from './admin/DeleteButton';
+import AddButton from './admin/AddButton';
+
+const EXPERIENCE_FIELDS = [
+  { name: 'title', label: 'Job Title', type: 'text' },
+  { name: 'company', label: 'Company', type: 'text' },
+  { name: 'duration', label: 'Duration', type: 'text' },
+  { name: 'location', label: 'Location', type: 'text' },
+  { name: 'description', label: 'Description', type: 'textarea' },
+  { name: 'achievements', label: 'Achievements (one per line)', type: 'list' },
+];
 
 const Experience = ({ experiences }) => {
+  const { canEdit } = useAuth();
+  const { refetch } = usePortfolioData();
+
   return (
     <section className="py-20 bg-gray-900 relative overflow-hidden" id='experience'>
       {/* Background pattern */}
@@ -33,6 +52,25 @@ const Experience = ({ experiences }) => {
                 <div className="ml-12 md:ml-20">
                   <Card className="bg-gray-800/50 border-gray-700 shadow-xl backdrop-blur-sm hover:shadow-2xl hover:bg-gray-800/70 transition-all duration-500 group-hover:scale-105">
                     <CardContent className="p-6">
+                      {canEdit && (
+                        <div className="flex justify-end gap-2 mb-2">
+                          <ItemEditorDialog
+                            trigger={<EditButton />}
+                            title="Edit Experience"
+                            table="experience"
+                            fields={EXPERIENCE_FIELDS}
+                            initialValues={exp}
+                            onSaved={refetch}
+                          />
+                          <DeleteButton
+                            confirmMessage={`Delete "${exp.title}"?`}
+                            onConfirm={async () => {
+                              await deleteRow('experience', exp.id);
+                              refetch();
+                            }}
+                          />
+                        </div>
+                      )}
                       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                         <div>
                           <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
@@ -72,6 +110,19 @@ const Experience = ({ experiences }) => {
               </div>
             ))}
           </div>
+
+          {canEdit && (
+            <div className="mt-8 flex justify-center">
+              <ItemEditorDialog
+                trigger={<AddButton label="Add Experience" />}
+                title="Add Experience"
+                table="experience"
+                fields={EXPERIENCE_FIELDS}
+                initialValues={{ sort_order: experiences.length }}
+                onSaved={refetch}
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>

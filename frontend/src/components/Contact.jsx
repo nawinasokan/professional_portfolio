@@ -1,8 +1,19 @@
 import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Mail, Phone, Github, Linkedin, MapPin } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
+import PersonalEditDialog from './admin/PersonalEditDialog';
+import EditButton from './admin/EditButton';
+
+const CONTACT_FIELDS = [
+  { name: 'email', label: 'Email', type: 'text' },
+  { name: 'phone', label: 'Phone', type: 'text' },
+  { name: 'linkedin', label: 'LinkedIn URL', type: 'text' },
+  { name: 'github', label: 'GitHub URL', type: 'text' },
+];
 
 const Contact = ({ personalData }) => {
+  const { canEdit } = useAuth();
   const contactItems = [
     {
       icon: Mail,
@@ -50,6 +61,15 @@ const Contact = ({ personalData }) => {
           <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
             I'm always open to discussing new opportunities, interesting projects, or just having a conversation about technology and development.
           </p>
+          {canEdit && (
+            <div className="mt-4 flex justify-center">
+              <PersonalEditDialog
+                trigger={<EditButton />}
+                title="Edit Contact Details"
+                fields={CONTACT_FIELDS}
+              />
+            </div>
+          )}
         </div>
 
         <div className="max-w-4xl mx-auto">

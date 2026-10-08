@@ -2,8 +2,26 @@ import React from 'react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { GraduationCap, Award, Calendar } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
+import { usePortfolioData } from '../contexts/PortfolioDataContext';
+import { deleteRow } from '../lib/portfolioApi';
+import ItemEditorDialog from './admin/ItemEditorDialog';
+import EditButton from './admin/EditButton';
+import DeleteButton from './admin/DeleteButton';
+import AddButton from './admin/AddButton';
+
+const QUALIFICATION_FIELDS = [
+  { name: 'degree', label: 'Degree / Certification', type: 'text' },
+  { name: 'institution', label: 'Institution', type: 'text' },
+  { name: 'duration', label: 'Duration', type: 'text' },
+  { name: 'grade', label: 'Grade', type: 'text' },
+  { name: 'description', label: 'Description', type: 'textarea' },
+];
 
 const Qualifications = ({ qualifications }) => {
+  const { canEdit } = useAuth();
+  const { refetch } = usePortfolioData();
+
   return (
     <section className="py-20 bg-gray-800 relative overflow-hidden" id="qualifications">
       {/* Background elements */}
@@ -24,6 +42,25 @@ const Qualifications = ({ qualifications }) => {
             {qualifications.map((qual, index) => (
               <Card key={qual.id} className="bg-gray-900/50 border-gray-700 shadow-xl backdrop-blur-sm hover:shadow-2xl hover:bg-gray-900/70 transition-all duration-500 group hover:scale-105">
                 <CardContent className="p-6">
+                  {canEdit && (
+                    <div className="flex justify-end gap-2 mb-2">
+                      <ItemEditorDialog
+                        trigger={<EditButton />}
+                        title="Edit Qualification"
+                        table="qualifications"
+                        fields={QUALIFICATION_FIELDS}
+                        initialValues={qual}
+                        onSaved={refetch}
+                      />
+                      <DeleteButton
+                        confirmMessage={`Delete "${qual.degree}"?`}
+                        onConfirm={async () => {
+                          await deleteRow('qualifications', qual.id);
+                          refetch();
+                        }}
+                      />
+                    </div>
+                  )}
                   {/* Icon */}
                   <div className="mb-4">
                     {qual.degree.includes('Certification') ? (
@@ -65,6 +102,19 @@ const Qualifications = ({ qualifications }) => {
               </Card>
             ))}
           </div>
+
+          {canEdit && (
+            <div className="mt-8 flex justify-center">
+              <ItemEditorDialog
+                trigger={<AddButton label="Add Qualification" />}
+                title="Add Qualification"
+                table="qualifications"
+                fields={QUALIFICATION_FIELDS}
+                initialValues={{ sort_order: qualifications.length }}
+                onSaved={refetch}
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>
