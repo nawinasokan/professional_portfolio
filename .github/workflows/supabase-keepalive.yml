@@ -1,0 +1,29 @@
+name: Supabase keep-alive
+
+on:
+  schedule:
+    - cron: "0 3 */6 * *"
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+    steps:
+      - name: Ping Supabase
+        shell: bash
+        run: |
+          set -euo pipefail
+          count=$(curl -fsS "$SUPABASE_URL/rest/v1/keepalive?id=eq.1&select=ping_count" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_KEY" | jq -r '.[0].ping_count // 0')
+          now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          curl -fsS -X POST "$SUPABASE_URL/rest/v1/keepalive?on_conflict=id" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_KEY" \
+            -H "Content-Type: application/json" \
+            -H "Prefer: resolution=merge-duplicates,return=minimal" \
+            -d "{\"id\":1,\"last_ping\":\"$now\",\"ping_count\":$((count + 1))}"
+          echo "Keep-alive ping ok at $now (count $((count + 1)))"

@@ -245,3 +245,9 @@ select * from (values
   )
 ) as v(title, description, tech_stack, github_url, live_url, image_url, sort_order)
 where not exists (select 1 from public.projects);
+
+-- Keep-alive table: pinged by .github/workflows/supabase-keepalive.yml so the
+-- free-tier project is not paused after 7 days of inactivity.
+create table if not exists keepalive (id int primary key, last_ping timestamptz not null default now(), ping_count bigint not null default 0);
+alter table keepalive enable row level security;  -- no policies
+insert into keepalive (id) values (1) on conflict (id) do nothing;
